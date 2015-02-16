@@ -1,0 +1,32 @@
+{# src/Sdz/BlogBundle/Resources/views/Blog/liste.html.twig #}
+
+{% extends "SdzBlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Liste d'articles - {{ parent() }}
+{% endblock %}
+
+{% block sdzblog_body %}
+
+  <div class="well">
+    {% if listeArticles|length > 0 %}
+    <div>
+      Titres d'articles avec catégories :
+      <ul>
+        {% for art in listeArticles %}
+          <li>{{ art.id }} : {{ art.categories.count }}</li>
+	   {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  </div>
+
+
+  <p>
+    <a href="{{ path('sdzblog_accueil') }}" class="btn">
+      <i class="icon-chevron-left"></i>
+      Retour à la liste
+    </a>
+  </p>
+
+{% endblock %}

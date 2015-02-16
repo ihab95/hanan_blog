@@ -1,0 +1,7 @@
+// test/composer.json
+
+{
+  "require": {
+    "twig/extensions": "dev-master"
+  }
+}
