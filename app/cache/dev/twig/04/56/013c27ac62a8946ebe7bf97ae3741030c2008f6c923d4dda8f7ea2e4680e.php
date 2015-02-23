@@ -7,7 +7,15 @@ class __TwigTemplate_0456013c27ac62a8946ebe7bf97ae3741030c2008f6c923d4dda8f7ea2e
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        // line 3
+        try {
+            $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(3);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -52,6 +60,6 @@ class __TwigTemplate_0456013c27ac62a8946ebe7bf97ae3741030c2008f6c923d4dda8f7ea2e
 
     public function getDebugInfo()
     {
-        return array (  39 => 8,  36 => 7,  29 => 5,);
+        return array (  47 => 8,  44 => 7,  37 => 5,  11 => 3,);
     }
 }

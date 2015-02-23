@@ -7,7 +7,15 @@ class __TwigTemplate_41c3220b158b60f428be4390809f2c157eb0e35bf1038104490dc8f2d8b
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        // line 3
+        try {
+            $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(3);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -103,15 +111,15 @@ class __TwigTemplate_41c3220b158b60f428be4390809f2c157eb0e35bf1038104490dc8f2d8b
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
             // line 29
             echo "        <li";
-            if (((isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")) == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
+            if (($context["p"] == (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")))) {
                 echo " class=\"active\"";
             }
             echo ">
           <a href=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_accueil", array("page" => (isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_accueil", array("page" => $context["p"])), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, (isset($context["p"]) ? $context["p"] : $this->getContext($context, "p")), "html", null, true);
+            echo twig_escape_filter($this->env, $context["p"], "html", null, true);
             echo "</a>
         </li>
       ";
@@ -138,6 +146,6 @@ class __TwigTemplate_41c3220b158b60f428be4390809f2c157eb0e35bf1038104490dc8f2d8b
 
     public function getDebugInfo()
     {
-        return array (  123 => 33,  112 => 30,  105 => 29,  100 => 28,  92 => 21,  85 => 19,  71 => 17,  68 => 16,  66 => 15,  48 => 14,  42 => 10,  39 => 9,  32 => 6,  29 => 5,);
+        return array (  131 => 33,  120 => 30,  113 => 29,  108 => 28,  100 => 21,  93 => 19,  79 => 17,  76 => 16,  74 => 15,  56 => 14,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  11 => 3,);
     }
 }

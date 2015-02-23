@@ -7,7 +7,15 @@ class __TwigTemplate_b49f675b6543373bc638487ad144b08ebf0a98ab155aff4df3d1115367b
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        // line 3
+        try {
+            $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(3);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -56,14 +64,14 @@ class __TwigTemplate_b49f675b6543373bc638487ad144b08ebf0a98ab155aff4df3d1115367b
     </a>
     <a href=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_modifier", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id"))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_modifier", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id", array()))), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-edit\"></i>
       Modifier l'article
     </a>
     <a href=\"";
         // line 23
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_supprimer", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id"))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_supprimer", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id", array()))), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-trash\"></i>
       Supprimer l'article
@@ -85,6 +93,6 @@ class __TwigTemplate_b49f675b6543373bc638487ad144b08ebf0a98ab155aff4df3d1115367b
 
     public function getDebugInfo()
     {
-        return array (  66 => 23,  59 => 19,  52 => 15,  48 => 13,  45 => 12,  42 => 10,  39 => 9,  32 => 6,  29 => 5,);
+        return array (  74 => 23,  67 => 19,  60 => 15,  56 => 13,  53 => 12,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  11 => 3,);
     }
 }

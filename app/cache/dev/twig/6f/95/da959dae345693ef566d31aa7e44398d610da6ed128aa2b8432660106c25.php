@@ -7,7 +7,15 @@ class __TwigTemplate_6f95da959dae345693ef566d31aa7e44398d610da6ed128aa2b84326601
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        // line 3
+        try {
+            $this->parent = $this->env->loadTemplate("SdzBlogBundle::layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(3);
+
+            throw $e;
+        }
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
@@ -57,7 +65,7 @@ class __TwigTemplate_6f95da959dae345693ef566d31aa7e44398d610da6ed128aa2b84326601
   <p>
     <a href=\"";
         // line 23
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_voir", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id"))), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sdzblog_voir", array("id" => $this->getAttribute((isset($context["article"]) ? $context["article"] : $this->getContext($context, "article")), "id", array()))), "html", null, true);
         echo "\" class=\"btn\">
       <i class=\"icon-chevron-left\"></i>
       Retour à l'article
@@ -79,6 +87,6 @@ class __TwigTemplate_6f95da959dae345693ef566d31aa7e44398d610da6ed128aa2b84326601
 
     public function getDebugInfo()
     {
-        return array (  60 => 23,  49 => 14,  47 => 13,  42 => 10,  39 => 9,  32 => 6,  29 => 5,);
+        return array (  68 => 23,  57 => 14,  55 => 13,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  11 => 3,);
     }
 }
